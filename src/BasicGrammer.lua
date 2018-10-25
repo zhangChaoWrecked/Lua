@@ -7,7 +7,13 @@
 -----------------for 循环
 for i = 1, 3 do
     io.write(i);
+
 end
+-----------------for 循环每次变量更改的大小
+for a = 1, 10, 2 do
+    print(a)
+end
+
 -----------------函数
 function myFunc1()
     print("hello function")
@@ -28,10 +34,59 @@ print(c)
 a = 1
 b = 2
 function myFunc3(A, B)
-    return A,B
+    return A, B
 end
-c ,d= myFunc3(a, b) --c会等于返回的第一个，在此倒转过来即为2
-print(c,d)
+c, d = myFunc3(a, b) --c会等于返回的第一个，在此倒转过来即为2
+print(c, d)
+
+
+-----------------逻辑控制语句
+
+a = 10
+
+if a == 10 then
+
+    print("我是10")
+
+elseif a == 11 then
+
+    print("我是11")
+
+else
+
+    print("Else")
+
+end
+
+-----------------引用类型
+
+linbc = {}
+linbc.sex = "男";
+linbc.age = 27;
+print(linbc, linbc.sex, linbc["age"])
+A = linbc
+print(A["sex"])
+
+for i, v in pairs(linbc) do
+    print(i, v)
+end
+-----------------数组 下标1开始
+arr = { 1, 2, 3, "a", 'b', linbc }
+
+for i, v in pairs(arr) do
+
+    print(i, v)
+
+end
+
+
+ table.insert(arr,88)
+
+ table.foreach(arr,function(i,v) print(i,v) end)
+
+ print(arr[6])
+
+ table.foreach(arr,function(i,v) print(i,v) end)
 
 
 
